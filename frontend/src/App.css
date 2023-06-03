@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: #45de89;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*Margenes para los layouts de cada pagina  */
+.general,
+.kids,
+.men,
+.sneakers,
+.signup,
+.offers,
+.dress {
+  margin-top: 7.7rem;
+}
+
+.signup {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: seashell;
+}
+
+.app {
+  position: relative;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.top {
+  background: #555;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+nav.menu .links {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+nav.menu .links:hover {
+  background: #45de89;
+  color: #555;
+}
+
+.top .navIcons {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.2rem;
+  gap: 4.5rem;
+}
+
+.top .cartIcon {
+  color: white;
+  cursor: pointer;
+}
+
+.top .userIcon {
+  color: white;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+
+/*Aqui terminan los estilos  del TOP "el menu" *
+/
+/*Aqui empieza el HERO AREA */
+
+.hero {
+  width: 100%;
+  color: #555;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin: 4rem 0 1rem 12rem;
+}
+span.titulo-dest {
+  color: rgb(206, 37, 45);
+}
+
+.hero p {
+  font-size: 2rem;
+  margin-left: 12rem;
+}
+
+.hero button {
+  border: solid 0;
+  color: white;
+  background: #555;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  margin: 8rem 0 12rem 12rem;
+  border-radius: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.hero button:hover {
+  background: rgb(206, 37, 45);
+  border: solid 0;
+  color: #fff;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background: url(./images/Prod1.png), #f3ddd3;
+  background-size: 850px auto;
+  background-repeat: no-repeat;
+  background-position: 120% 250%;
+  clip-path: polygon(15vh 0, 100% 0, 100% 80vh, 0 100%);
+}
+
+.socialbts {
+  font-size: 4rem;
+  margin-left: 12rem;
+  margin-bottom: 10rem;
+}
+
+.socialbts .i {
+  margin-right: 2rem;
+  transition: 0.3s;
+}
+.socialbts .i:hover {
+  cursor: pointer;
+  color: #ce252d;
+  margin-right: 2rem;
+}
+
+/*Termina el HERO AREA*/
+
+/*estilos de la parte principal*/
+
+main.general {
+  display: flex;
+  width: 100%;
+}
+
+/*Estilos del lado  izquierdo del main */
+
+.Lmainconteiner {
+  display: flex;
+  flex-grow: 8;
+  justify-content: center;
+}
+
+.leftside-content {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  border-radius: 6px;
+  height: 238px;
+  margin-top: 5rem;
+  background-color: #f3ddd3;
+}
+
+.leftside-content div.left-title {
+  border-radius: 6px 6px 0 0;
+  padding: 1.5rem 0;
+  background-color: #555;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font: normal normal 1rem Poppins;
+}
+
+.left-side-menu {
+  width: 100%;
+}
+
+.left-side-menu .leftLinks {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font: normal bold 1.2rem Poppins;
+  padding: 1rem 0;
+  color: #555;
+}
+
+.left-side-menu .leftLinks:hover {
+  background-color: #ce252d;
+  color: white;
+}
+
+/*estilos del lado derecho*/
+
+.Rmainconteiner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+}
+
+/*Aqui termina la cabecera  lado derecho */
+
+/*Aqui empieza  la seccion oferta de prodctos  */
+
+.productos {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.productos h2 {
+  color: #555;
+  font-size: 3rem;
+  margin: 2rem 0 4rem 7.5rem;
+}
+
+.productos .product-row1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.productos .product-row2 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.productos .product-row3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stars {
+  color: #e4e706;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+}
+.product-name {
+  color: #555;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+}
+.price {
+  color: #555;
+  margin: 0.7rem 0;
+  font-size: 1.5rem;
+}
+
+/*Aqui terminan los estilos del area de productos*/
+
+/*Aqui empieza los estilos del Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: #ce252d;
+}
+
+footer ul {
+  list-style-type: none;
+  margin-bottom: 10rem;
+}
+footer ul li {
+  margin-bottom: 1.5rem;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+footer h6 {
+  font-size: 2.5rem;
+  margin: 5rem 0;
+}
+footer .row-footer {
+  font: normal bold 1.5rem Poppins;
+}
+
+footer ul li a:hover {
+  text-decoration: none;
+  color: #45de89;
+}

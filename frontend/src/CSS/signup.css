@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+.signUpbox {
+  border-radius: .8rem;
+  border: solid 0.5px #bbb;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0 10rem 0 ;
+  align-items: center;
+  background-color: white;
+  
+}
+
+.formLabel {
+  font: normal bold 1.6rem Poppins;
+  color: #ce252d;
+}
+
+.loginImgDiv {
+  margin: 2rem 0 0 0;
+  width: 70px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.loginImg {
+  width: 100%;
+}
+
+.logingform {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form .formLabel {
+  display: inline-block;
+  margin: 2rem 0 0.5rem;
+}
+
+.inpuText {
+  width: 100%;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: seashell;
+  border: solid .5px #bbb;
+  outline: none;
+  cursor: pointer;
+  
+}
+
+/*Password seetings*/
+
+.inpuTextForPass {
+  width: 100%;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: seashell;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  
+}
+
+.passwordFormDiv {
+  display: flex;
+  border: solid .5px #bbb; border-radius: .8rem;
+  
+}
+
+span.viewandHideIcon {
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  font-size: 1.8rem;
+  background-color: seashell;
+  border-radius: 0.8rem;
+  padding-right: 0.5rem;
+  
+}
+
+.inpuText:focus-within {
+  outline: solid 1px #ce252d;
+  border: none;
+}
+
+.passwordFormDiv:focus-within {
+  outline: solid 1px #ce252d;
+  border-radius: 0.8rem;
+  border: none;
+  
+}
+/*Password settings ends here*/
+
+div.signupBtnDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button.signupbtn {
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+  background: #ce252d;
+  cursor: pointer;
+  font: normal normal 1.4rem Poppins;
+  color: white;
+  border: none;
+  border-radius: .8rem;
+   
+
+}
+
+form p { 
+
+    text-align: center;
+    margin: 1rem 0 0 0;
+    font: normal normal 1.5rem Poppins;
+
+}
+
+form p span .loginLink {
+    font-weight: bold;
+    color: #ce252d;
+    text-decoration: none;
+}

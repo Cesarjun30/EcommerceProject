@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+*::selection { background: #45de89;
+    color:#fff;
+}
+
+html { font-size: 62.5%;
+
+}
+
+
+header {width: 100%; display: flex; flex-direction: column;
+
+background: url(/images/Prod1.png), #efefef; 
+background-size: 1000px auto; 
+background-repeat: no-repeat; 
+background-position: 470px 70px;
+
+}
+
+header menu {width: 100%;}
+
+ul {list-style-type:none;
+    background: #555;
+    overflow:hidden;
+    
+}
+
+menu ul li { 
+ float: left;
+ 
+}
+
+menu ul li a {
+     display: block;
+     font-size: 1.8rem; 
+     text-decoration: none;  
+     padding: 3rem 4rem 3rem 4rem; 
+     color: white; 
+     text-align: center;}
+
+menu ul li a:hover {background:#45de89; color:#555;}
+
+
+.hero { width: 100%; color: #555; 
+
+}
+
+.hero h1 {font-size: 5rem; margin: 4rem 0 1rem 12rem;}
+span.titulo-dest {color: rgb(206,37,45);}
+
+.hero p {font-size: 2rem; margin-left: 12rem;}
+
+.hero button { border:solid  .5px; color:white; background:#555 ; padding: 1rem 3rem; cursor: pointer; margin-left: 12rem; margin-top: 8rem; border-radius: 1.2rem; font-size: 2rem;
+margin-bottom: 20rem;
+}
+
+.hero button:hover {background:rgb(206,37,45); border:solid .5px #555;  color: #fff;}
+
+/*Aqui termina la cabecera */
+
+
+/*Aqui empieza  la seccion oferta de prodctos  */
+
+.productos {
+    margin: 2rem 0 ;
+    display: flex; flex-direction: column;
+}
+
+.productos h2 {color: #555; font-size: 3rem; margin:2rem 0 4rem 7.5rem;}
+
+.productos .product-row1 {display: flex;  height: 430px; } 
+
+.productos .product-row2 {display: flex; justify-content: space-around;}
+
+.productos .product-row3 {display: flex; justify-content: space-around;}
+
+.stars {color: #e4e706; margin: .7rem 0; font-size: 1.5rem;}
+.product-name {color: #555; margin: .7rem 0; font-size: 1.5rem;}
+.price {color: #555; margin: .7rem 0; font-size: 1.5rem;}
+
+
+.product-row1 .row-boxes {   width: 0px; flex-grow: 1; object-fit: cover; opacity: .8; transition: .5s ease; }
+
+.product-row1 .row-boxes:hover { cursor: crosshair; width: 300px; opacity: 1; filter: contrast(120%);}
+
+
+
