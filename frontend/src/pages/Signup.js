@@ -32,7 +32,8 @@ const Signup = () => {
   const handleSubmit = async(e) => {
 
     e.preventDefault()
-    const {firstname, lastname, email, password, confirmpassword} = data
+    const {firstname, lastname, email, password, confirmpassword} = data;
+    
     if (firstname && lastname  && email && password && confirmpassword){
       const  fetchData = await fetch (`${process.env.REACT_APP_SERVER_DOMIN}/signup`, {
         method :"POST",
