@@ -1,28 +1,28 @@
 var express = require('express');
-const direc = express.Router();
+// const direc1 = express.Router();
 const mongoose = require('mongoose');
-// const UserSchema = require('./schema');
-// const User = mongoose.model("User", UserSchema);
+const userSchema = require('./schema');
+const userModel = mongoose.model("User", userSchema);
 
-// hacer el post
-// hacer funcion create user
-fetch('http://localhost:3000/createuser', {
-    method: 'POST',
-    body: JSON.stringify(data)
-})
-function CreateUser(req, res){
-    // User({
-    //     firstname: "",
-    //     lastName: "",
-    //     email: "",
-    //     password: "",
 
-    // }).save().then((User)=>console.log(User)).catch((err)=>console.log(err))
-    console.log(req.params.num1)
-   res.send({message: "usuario creado"});
-    console.log("usuario creado");
-}
+function createUSer(req, res){
+    app.post("/signup", async (req, res) => {
+        console.log(req.body);
+        const { email } = req.body;
 
-direc.post('/:user', CreateUser);
-// aquí se guarda 
-module.exports = direc;
+        userModel.findOne({ email: email }, (err, result) => {
+            console.log(err);
+            if(result) {
+                res.send({ message: "Correo ya registrado", alerte: false});
+                } else {
+                    const data = userModel(req.body);
+                    const save = data.save();
+                    res.send({ message: "Succesfully sign up", alert: true });
+                }
+        });
+    });
+};
+
+// direc1.get("/:email", createUSer);
+
+export default createUSer;

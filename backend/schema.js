@@ -6,17 +6,22 @@ const mongoose = require("mongoose");
 
 // user schema
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
      firstname: String,
      lastName: String,
-     email: String,
+     email: {
+        type: String,
+        unique: true,
+     },
      password: String,
-
+     confirmPassword: String,
+     image: String,
 });
+
 
 // product schema
 
-const ProductSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
     name: String,
     price: Number,
     description: String,
@@ -26,9 +31,7 @@ const ProductSchema = new mongoose.Schema({
     // }
 });
 
-// const UserModel = mongoose.model("User", userSchema);
-// const ProductModel = mongoose.model("Product", productSchema);
 
 
-module.exports = mongoose.model('UserSchema', UserSchema);
-module.exports = mongoose.model('ProductSchema', ProductSchema);
+module.exports = mongoose.model('UserSchema', userSchema);
+module.exports = mongoose.model('ProductSchema', productSchema);
