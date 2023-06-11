@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import loginImg from "../images/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import {toast} from 'react-hot-toast';
+
 
 const Signup = () => {
 
@@ -45,11 +47,11 @@ const Signup = () => {
 
       const dataRes = await fetchData.json()
       console.log(dataRes)
-
+      
       if(password === confirmpassword) {
 
-        alert("cuenta creada")
-
+        //alert(dataRes.message)
+        toast(dataRes.message);
       }
 
       else {

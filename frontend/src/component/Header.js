@@ -2,8 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { BsCartFill } from "react-icons/bs";
+import { useState } from "react";
+
+
 
 const Header = () => {
+
+  const [showMenu,setShowMenu] = useState()
+  const handleShowMenu = () => {
+
+    setShowMenu (preve => !preve)
+  }
+
   return (
     <div className="sticky">
       {/* Desktop*/}
@@ -33,13 +43,21 @@ const Header = () => {
         <div className="navIcons">
           <div className="cartIcon">
             <BsCartFill />
+            <div className="cartCounter">0</div>
           </div>
-          <div className="userIcon">
-            <FaUserAlt />
+          <div className="loginConteiner" onClick={handleShowMenu}>
+            <div className="userIcon" >
+              <FaUserAlt />
+            </div >
+            {showMenu && (<div className="loginMenu">
+              <Link to={"NewProduct"} className="newProductLink">New Product</Link>
+              <Link to={"Login"} className="loginLink">Login</Link>
+            </div>)}
+
           </div>
         </div>
       </div>
-      
+
       {/* Mobile*/}
     </div>
   );
