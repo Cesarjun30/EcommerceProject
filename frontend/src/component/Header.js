@@ -51,7 +51,7 @@ const Header = () => {
             </div >
             {showMenu && (<div className="loginMenu">
               <Link to={"NewProduct"} className="newProductLink">New Product</Link>
-              <Link to={"Login"} className="loginLink">Login</Link>
+              <Link to={"login"} className="loginLink">Log in</Link>
             </div>)}
 
           </div>

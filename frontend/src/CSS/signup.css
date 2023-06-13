@@ -5,15 +5,14 @@ html {
 }
 
 .signUpbox {
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   border: solid 0.5px #bbb;
   width: 370px;
   display: flex;
   flex-direction: column;
-  margin: 5rem 0 10rem 0 ;
+  margin: 3rem 0 10rem 0;
   align-items: center;
   background-color: white;
-  
 }
 
 .formLabel {
@@ -22,12 +21,33 @@ html {
 }
 
 .loginImgDiv {
-  margin: 2rem 0 0 0;
-  width: 70px;
+  position: relative;
+  margin: 1rem 0 0 0;
+  width: 80px;
   overflow: hidden;
   border-radius: 100px;
+  height: 80px;
+  }
+
+.upLoadBtn {
+  position: absolute;
+  background-color: rgba(85, 85, 85, 0.6);
+  text-align: center;
+  width: 100%;
+  height: 40%;
+  top: 65%;
+  cursor: pointer;
+  color: white;
+  font: normal bold 1.1rem Poppins;
+
 }
+
+.loginImgDiv .profileImage {visibility: hidden;}
+
+.upLoadBtn p {margin-top: .6rem;}
+
 .loginImg {
+  height: 110%;
   width: 100%;
 }
 
@@ -40,7 +60,7 @@ html {
 
 form .formLabel {
   display: inline-block;
-  margin: 2rem 0 0.5rem;
+  margin: 1.5rem 0 0.5rem;
 }
 
 .inpuText {
@@ -49,10 +69,9 @@ form .formLabel {
   padding: 1rem;
   font-size: 1.5rem;
   background-color: seashell;
-  border: solid .5px #bbb;
+  border: solid 0.5px #bbb;
   outline: none;
   cursor: pointer;
-  
 }
 
 /*Password seetings*/
@@ -66,13 +85,12 @@ form .formLabel {
   border: none;
   outline: none;
   cursor: pointer;
-  
 }
 
 .passwordFormDiv {
   display: flex;
-  border: solid .5px #bbb; border-radius: .8rem;
-  
+  border: solid 0.5px #bbb;
+  border-radius: 0.8rem;
 }
 
 span.viewandHideIcon {
@@ -83,7 +101,6 @@ span.viewandHideIcon {
   background-color: seashell;
   border-radius: 0.8rem;
   padding-right: 0.5rem;
-  
 }
 
 .inpuText:focus-within {
@@ -95,14 +112,13 @@ span.viewandHideIcon {
   outline: solid 1px #ce252d;
   border-radius: 0.8rem;
   border: none;
-  
 }
 /*Password settings ends here*/
 
 div.signupBtnDiv {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 button.signupbtn {
@@ -113,21 +129,28 @@ button.signupbtn {
   font: normal normal 1.4rem Poppins;
   color: white;
   border: none;
-  border-radius: .8rem;
-   
-
+  border-radius: 0.8rem;
 }
 
-form p { 
+button.signinbtn {
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+  background: #ce252d;
+  cursor: pointer;
+  font: normal normal 1.4rem Poppins;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+}
 
-    text-align: center;
-    margin: 1rem 0 0 0;
-    font: normal normal 1.5rem Poppins;
-
+form p {
+  text-align: center;
+  margin: 1rem 0 0 0;
+  font: normal normal 1.5rem Poppins;
 }
 
 form p span .loginLink {
-    font-weight: bold;
-    color: #ce252d;
-    text-decoration: none;
+  font-weight: bold;
+  color: #ce252d;
+  text-decoration: none;
 }
