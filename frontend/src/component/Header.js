@@ -3,15 +3,24 @@ import { Link } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { BsCartFill } from "react-icons/bs";
 import { useState } from "react";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import {logoutRedux} from '../redux/userSlice'
+import { toast } from "react-hot-toast";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const userData = useSelector((state) => state.user);
+  console.log(userData);
+  const dispatch = useDispatch()
 
-  const [showMenu,setShowMenu] = useState()
   const handleShowMenu = () => {
+    setShowMenu((preve) => !preve);
+  };
 
-    setShowMenu (preve => !preve)
+  const handleLogout = () => {
+    dispatch(logoutRedux())
+    toast("Hope to see you later, baaayy!!!")
+
   }
 
   return (
@@ -46,14 +55,22 @@ const Header = () => {
             <div className="cartCounter">0</div>
           </div>
           <div className="loginConteiner" onClick={handleShowMenu}>
-            <div className="userIcon" >
-              <FaUserAlt />
-            </div >
-            {showMenu && (<div className="loginMenu">
-              <Link to={"NewProduct"} className="newProductLink">New Product</Link>
-              <Link to={"login"} className="loginLink">Log in</Link>
-            </div>)}
-
+            <div className="userIcon">
+              {userData.image ? <img src={userData.image} alt="userimage" className="loggedinImg"/> : <FaUserAlt />}
+            </div>
+            {showMenu && (
+              <div className="loginMenu">
+                <Link to={"NewProduct"} className="newProductLink">
+                  New Product
+                </Link>
+                {
+                  userData.image ? <span className="logOut" onClick={handleLogout}><p>Logout</p></span> : <Link to={"login"} className="loginLink">
+                  Log in
+                </Link>
+                }
+                
+              </div>
+            )}
           </div>
         </div>
       </div>

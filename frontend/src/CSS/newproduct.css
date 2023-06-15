@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+.newProduct {
+  display: flex;
+  width: 100%;
+}
+
+.newProductForm {
+  display: flex;
+  background-color: #ce252d;
+  width: 350px;
+  margin: 2.5rem auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.newProdInput {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.imageUploader {
+   
+  justify-content: center;  
+  display: flex;
+  height: 140px;
+  width: 100%;
+  background-color: #eee;
+  margin-top: 1rem;
+  align-items: center ;
+  font-size: 35px;
+}

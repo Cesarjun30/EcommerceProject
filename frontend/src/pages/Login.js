@@ -4,6 +4,8 @@ import loginImg from "../images/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { loginRedux } from "../redux/userSlice";
 
 const Login = () => {
   const navegate = useNavigate();
@@ -12,6 +14,9 @@ const Login = () => {
     password: "",
   });
   console.log(data);
+  const userData = useSelector((state) => state);
+ 
+  const dispatch = useDispatch();
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -42,17 +47,21 @@ const Login = () => {
 
       const dataRes = await fetchData.json();
       console.log(dataRes);
+      
 
       //alert(dataRes.message)
 
       toast(dataRes.message);
       if (dataRes.alert) {
-       setTimeout(() =>{
-        navegate("/");
-       }, 1000); 
+        dispatch(loginRedux(dataRes));
+        setTimeout(() => {
+          navegate("/");
+        }, 1000);
       }
+
+      console.log(userData);
     } else {
-      alert("Por favor inserta la informacion requerida");
+      console.log("Por favor inserta la informacion requerida");
     }
   };
 
@@ -61,15 +70,13 @@ const Login = () => {
     setShowPassword((mostrar) => !mostrar);
   };
 
-  {
-    /*Aqui termina  estado de mostrar y esconder password*/
-  }
+  /*Aqui termina  estado de mostrar y esconder password*/
 
   return (
     <div className="signup">
       <div className="signUpbox">
         <div className="loginImgDiv">
-          <img src={loginImg} className="loginImg" />
+          <img src={loginImg} alt="logingImage" className="loginImg" />
         </div>
 
         <form className="logingform" onSubmit={handleSubmit}>

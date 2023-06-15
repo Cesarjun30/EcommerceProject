@@ -79,15 +79,16 @@ const Signup = () => {
   const handleConfirmShowPassowrd = () => {
     setShowConfirmPassword((mostrar) => !mostrar);
   };
-  {
+  
+  
     /*Aqui termina  estado de mostrar y esconder password*/
-  }
+  
 
   return (
     <div className="signup">
       <div className="signUpbox">
         <div className="loginImgDiv">
-          <img src={data.image ? data.image : loginImg} className="loginImg" />
+          <img src={data.image ? data.image : loginImg} alt="logingimage" className="loginImg" />
           <label htmlFor="profileImage">
             <div className="upLoadBtn">
               <p>Upload</p>

@@ -1,5 +1,6 @@
 import "./App.css";
 import "./CSS/signup.css";
+import "./CSS/newproduct.css"
 import "./normalize.css";
 import Header from "./component/Header";
 import { Outlet } from "react-router-dom";

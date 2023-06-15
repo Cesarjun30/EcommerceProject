@@ -57,6 +57,8 @@ nav {
   width: 100%;
   display: flex;
   font-size: 1.5rem;
+  align-items: center;
+  text-align: center;
 }
 
 nav.menu .links {
@@ -76,6 +78,7 @@ nav.menu .links:hover {
   display: flex;
   justify-content: space-between;
   gap: 4.5rem;
+  top: 4px;
 }
 
 .top .cartIcon {
@@ -103,16 +106,27 @@ nav.menu .links:hover {
   cursor: pointer;
   font-size: 2.5rem;
 }
+
 .loginConteiner {
   position: relative;
+  
 }
+
+.loginImg {
+  height: 110%;
+  width: 100%;
+}
+.userIcon{text-align: center; width: 40px; height: 40px; overflow: hidden; border-radius: 100%;}
+
+.loggedinImg{height: 100%; width: 100%; border-radius: 100%;}
+
 
 .loginMenu {
   position: absolute;
   background-color:#e7f1ec;
   text-align: center;
-  top: 25px;
-  right: 0;
+  top: 54px;
+  right: 10%;
   padding: 0.5rem 5rem;
   font-size: 1.2rem;
   box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
@@ -121,7 +135,7 @@ nav.menu .links:hover {
 }
 
 
-.loginMenu .newProductLink, .loginLink {
+.loginMenu .newProductLink, .loginLink, span.logOut {
   color:#ce252d;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -130,6 +144,11 @@ nav.menu .links:hover {
   text-decoration: none;
    
 }
+
+
+
+
+
 
 /*Aqui terminan los estilos  del TOP "el menu" *
 /
