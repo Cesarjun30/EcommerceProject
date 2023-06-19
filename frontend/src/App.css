@@ -24,8 +24,7 @@ html {
 .offers,
 .dress,
 .loginPage,
-.newProduct 
-{
+.newProduct {
   margin-top: 7.7rem;
 }
 
@@ -109,46 +108,47 @@ nav.menu .links:hover {
 
 .loginConteiner {
   position: relative;
-  
 }
 
 .loginImg {
   height: 110%;
   width: 100%;
 }
-.userIcon{text-align: center; width: 40px; height: 40px; overflow: hidden; border-radius: 100%;}
+.userIcon {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 100%;
+}
 
-.loggedinImg{height: 100%; width: 100%; border-radius: 100%;}
-
+.loggedinImg {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
 
 .loginMenu {
   position: absolute;
-  background-color:#e7f1ec;
+  background-color: #e7f1ec;
   text-align: center;
   top: 54px;
   right: 10%;
   padding: 0.5rem 5rem;
   font-size: 1.2rem;
-  box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
-  
-  
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-
-.loginMenu .newProductLink, .loginLink, span.logOut {
-  color:#ce252d;
+.loginMenu .newProductLink,
+.loginLink,
+span.logOut {
+  color: #ce252d;
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-   
 }
-
-
-
-
-
 
 /*Aqui terminan los estilos  del TOP "el menu" *
 /
@@ -283,6 +283,50 @@ main.general {
 /*Aqui termina la cabecera  lado derecho */
 
 /*Aqui empieza  la seccion oferta de prodctos  */
+
+/*NUEVA MERCANCIA PRODUCTS CARD*/
+
+.productsCard {
+  min-width: 200px;
+  min-height: 150px;
+  padding: 5px;
+  background-color: #e7f1ec;
+}
+
+.newMerchandise {
+  display: flex;
+  gap: 8rem;
+  margin: 3rem 0;
+}
+.sigleCard {
+  padding: 1rem;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.17);
+  background-color: white;
+}
+.cardTitle {
+  text-align: center;
+  font :normal bold 1.5rem Poppins;
+  margin: 10px  0 0 0  ;
+}
+
+.cardPrice {
+  text-align: center;
+  font :normal bold 1.3rem Poppins;
+}
+.productTitle {
+  color: #555;
+  font-size: 3rem;
+  margin: 2rem 0 4rem 7.5rem;
+}
+
+.cardDescription {font :normal bold 1.2rem Poppins; text-align: center;}
+
+.merchandiseImage {
+  height: 120px;
+  width: 100%;
+}
+.loadingData{ margin:30% 0; text-align: center; font:normal normal  1.6rem Poppins;}
+/**/
 
 .productos {
   margin: 2rem 0;

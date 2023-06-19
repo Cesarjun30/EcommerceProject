@@ -17,7 +17,9 @@ mongoose
   .then(() => console.log("Connect to Data Base"))
   .catch((error) => console.log(error));
 
-// schema
+  // MongoDB conexion
+
+// schema for user 
 
 const userSchema = mongoose.Schema({
   firstname: String,
@@ -108,5 +110,42 @@ app.post("/login", (req, res) => {
 
   })*/
 });
+
+// AQUI TERMINA LA SECCION DE INICIO DE SECCION 
+
+// AQUI EMPIENZA LA SECCION PRODUCTOS
+
+const productSchema = mongoose.Schema({
+  name: String,
+  category: String,
+  image: String,
+  price : String,
+  description: String
+});
+
+// model
+
+const productsModel = mongoose.model("products ", productSchema);
+
+// AQUI GUARDAMOS LOS PRODUCTOS
+
+//API 
+
+app.post("/uploadProducts", async(req, res) => {
+  console.log(req.body)
+  const data = await productsModel(req.body)
+  const datasave = await data.save()
+
+res.send({message : "Product Uploaded 🤩"})
+
+})
+
+// 
+
+app.get("/product", async(req, res) =>{
+  const data = await productsModel.find({})
+  res.send (JSON.stringify(data))
+})
+
 
 app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));

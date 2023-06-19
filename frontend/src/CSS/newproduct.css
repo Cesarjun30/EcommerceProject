@@ -14,19 +14,55 @@
   padding: 1rem;
 }
 
+.titleLable {
+  font: normal normal 1.2rem Poppins;
+  color: white;
+}
 .newProdInput {
   width: 100%;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  height: 3rem;
+  padding: 5px;
+  font :normal bold 1.2rem Poppins;
 }
 
 .imageUploader {
-   
-  justify-content: center;  
+  justify-content: center;
   display: flex;
   height: 140px;
   width: 100%;
-  background-color: #eee;
-  margin-top: 1rem;
-  align-items: center ;
+  background-color: #ddd;
+  margin: 1rem 0;
+  align-items: center;
   font-size: 35px;
+  border-radius: 4px;
+  flex-direction: column;
+ cursor: pointer; 
+}
+
+.uploadIcon{color: #555; position: absolute;}
+
+.fileUploaderBtn{visibility: hidden; position: absolute;}
+
+.imageProduct{height:100%;}
+
+.descriptionArea {
+  width: 100%; 
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  background-color: #ddd;
+  resize: none;
+  font: normal normal 1.5rem Poppins;
+  padding: 5px;
+}
+
+.saveBtn {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  color: white;
+  background-color: #555;
+  cursor: pointer;
+  font: normal normal 1.2rem Poppins;
 }
