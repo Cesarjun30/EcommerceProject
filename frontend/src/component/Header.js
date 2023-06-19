@@ -23,6 +23,8 @@ const Header = () => {
 
   }
 
+  console.log(process.env.REACT_APP_ADMIN_EMAIL)
+
   return (
     <div className="sticky">
       {/* Desktop*/}
@@ -60,11 +62,14 @@ const Header = () => {
             </div>
             {showMenu && (
               <div className="loginMenu">
-                <Link to={"NewProduct"} className="newProductLink">
+              {
+                userData.email === process.env.REACT_APP_ADMIN_EMAIL && <Link to={"NewProduct"} className="newProductLink">
                   New Product
                 </Link>
+              }
+                
                 {
-                  userData.image ? <span className="logOut" onClick={handleLogout}><p>Logout</p></span> : <Link to={"login"} className="loginLink">
+                  userData.image ? <span className="logOut" onClick={handleLogout}><p>Logout ({userData.firstname})</p></span> : <Link to={"login"} className="loginLink">
                   Log in
                 </Link>
                 }
