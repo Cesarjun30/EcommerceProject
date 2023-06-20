@@ -224,25 +224,29 @@ header {
 main.general {
   display: flex;
   width: 100%;
+  gap:2rem;
 }
 
 /*Estilos del lado  izquierdo del main */
 
 .Lmainconteiner {
   display: flex;
-  flex-grow: 8;
+  
   justify-content: center;
+  margin-top: 0;
 }
 
 .leftside-content {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 180px;
   border-radius: 6px;
-  height: 238px;
-  margin-top: 5rem;
+  height: auto;
+  margin-top: 103rem;
   background-color: #f3ddd3;
+  margin-left: 4rem;
 }
+
 
 .leftside-content div.left-title {
   border-radius: 6px 6px 0 0;
@@ -256,15 +260,17 @@ main.general {
 
 .left-side-menu {
   width: 100%;
+  
 }
 
 .left-side-menu .leftLinks {
   display: block;
   text-decoration: none;
   text-align: center;
-  font: normal bold 1.2rem Poppins;
+  font: normal bold 1.5rem Poppins;
   padding: 1rem 0;
   color: #555;
+  cursor: pointer;
 }
 
 .left-side-menu .leftLinks:hover {
@@ -288,15 +294,22 @@ main.general {
 
 .productsCard {
   min-width: 200px;
+  max-width: 150px;
   min-height: 150px;
   padding: 5px;
   background-color: #e7f1ec;
+  
 }
 
 .newMerchandise {
+  justify-content: center;
+  flex-wrap: wrap;
   display: flex;
   gap: 8rem;
   margin: 3rem 0;
+  
+  
+  
 }
 .sigleCard {
   padding: 1rem;
@@ -316,28 +329,32 @@ main.general {
 .productTitle {
   color: #555;
   font-size: 3rem;
-  margin: 2rem 0 4rem 7.5rem;
+  margin: 2rem 0 0rem 7.5rem;
+  
 }
 
 .cardDescription {font :normal bold 1.2rem Poppins; text-align: center;}
 
 .merchandiseImage {
-  height: 120px;
+  height: 100%;
   width: 100%;
 }
+
 .loadingData{ margin:30% 0; text-align: center; font:normal normal  1.6rem Poppins;}
 /**/
 
 .productos {
+  padding-top: 5rem;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  
 }
 
-.productos h2 {
+.productos .productTitle {
   color: #555;
   font-size: 3rem;
-  margin: 2rem 0 4rem 7.5rem;
+  margin: 2rem 0 0rem 7.5rem;
 }
 
 .productos .product-row1 {

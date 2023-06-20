@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -17,14 +17,41 @@ import product11 from "../images/Prod12.jpg";
 import product12 from "../images/Prod13.jpg";
 import ProductsCard from "../component/ProductsCard";
 import { useSelector } from "react-redux";
+import { AiOutlineWoman } from "react-icons/ai";
+import { AiOutlineMan } from "react-icons/ai";
+import { CgBoy } from "react-icons/cg";
+import { GiLargeDress } from "react-icons/gi";
+import { GiSonicShoes } from "react-icons/gi";
+import FilterProducts from "../component/FilterProducts";
 
 const Home = () => {
   const productData = useSelector((state) => state.product.productList);
   console.log(productData);
-  const productsCartList = productData.slice(4,8);
+  const productsCartList = productData.slice(4, 8);
 
-  const loadingProducts = new Array(4).fill(null)
-   
+  const loadingProducts = new Array(4).fill(null);
+
+  const categoryList = [...new Set(productData.map((el) => el.category))];
+  console.log(categoryList);
+
+  // Filtro de data
+
+  const [filterby, setFilterBy] = useState("");
+  const [dataFilter, setDataFilter] = useState([]);
+
+  useEffect(() => {
+    setDataFilter(productData);
+  }, [productData]);
+
+  const handleFilterProduct = (category) => {
+    const filter = productData.filter(
+      (el) => el.category.toLowerCase() === category.toLowerCase()
+    );
+    setDataFilter(() => {
+      return [...filter];
+    });
+  };
+
   return (
     <main className="general" id="general">
       <div className="Lmainconteiner" id="Lmainconteiner">
@@ -34,26 +61,12 @@ const Home = () => {
           </div>
 
           <div className="left-side-menu">
-            <Link to={""} className="leftLinks">
-              {" "}
-              Link 1
-            </Link>
-            <Link to={""} className="leftLinks">
-              {" "}
-              Link 1
-            </Link>
-            <Link to={""} className="leftLinks">
-              {" "}
-              Link 1
-            </Link>
-            <Link to={""} className="leftLinks">
-              {" "}
-              Link 1
-            </Link>
-            <Link to={""} className="leftLinks">
-              {" "}
-              Link 1
-            </Link>
+            <p>
+              {categoryList[0] &&
+                categoryList.map((el) => {
+                  return <FilterProducts category={el} onClick={()=>handleFilterProduct(el)}/>;
+                })}
+            </p>
           </div>
         </div>
       </div>
@@ -88,40 +101,50 @@ const Home = () => {
 
           {/*New MERCHADISE PRODUCT CARD*/}
 
-          <h1 className="productTitle">New Merchandise</h1>
+          <h2 className="productTitle">New Merchandise</h2>
           <div className="newMerchandise">
-            
-            { productsCartList[0] ? productsCartList.map(el => {
-              return (
-                
-              
-              <ProductsCard
-                key={el._id}
-                image={el.image}
-                name={el.name}
-                price={el.price}
-                category={el.category}
-                description={el.description}
-              />
-              );
-
-              })
-              : loadingProducts.map((el, index)=>{
-                return(
-                  <ProductsCard
-                    key={index}
-                    loading={"Loading data..."}
-                  />
-                )
-              })
-              }
-              
+            {productsCartList[0]
+              ? productsCartList.map((el) => {
+                  return (
+                    <ProductsCard
+                      key={el._id}
+                      image={el.image}
+                      name={el.name}
+                      price={el.price}
+                      category={el.category}
+                      description={el.description}
+                    />
+                  );
+                })
+              : loadingProducts.map((el, index) => {
+                  return (
+                    <ProductsCard key={index} loading={"Loading data..."} />
+                  );
+                })}
           </div>
-              
+
           <section className="productos" id="productos">
-            <h2>New Merchandise</h2>
+          
+            <h2 className="productTitle">Our Selection </h2>
 
             <div className="product-row1">
+              <div className="newMerchandise">
+                {dataFilter.map((el) => {
+                  return (
+                    <ProductsCard
+                      key={el._id}
+                      image={el.image}
+                      name={el.name}
+                      price={el.price}
+                      category={el.category}
+                      description={el.description}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+
+           {/* <div className="product-row1">
               <div className="row-boxes">
                 <img src={product1} alt="" width="250px" height="auto" />
                 <div className="stars">
@@ -258,7 +281,7 @@ const Home = () => {
                 <div className="price">
                   <span>$15.00</span>
                 </div>
-              </div>
+              </div> 
 
               <div className="row-boxes">
                 <img src={product10} alt="" width="250px" height="auto" />
@@ -304,7 +327,7 @@ const Home = () => {
                   <span>$15.00</span>
                 </div>
               </div>
-            </div>
+            </div>*/}
           </section>
         </article>
       </div>
