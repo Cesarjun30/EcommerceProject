@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8080;
 console.log(process.env.MONGODB_URL);
 mongoose
   .connect(process.env.MONGODB_URL)
-  .then(() => console.log("Connect to Data Base"))
+  // .then(() => console.log("Connect to Data Base"))
   .catch((error) => console.log(error));
 
   // MongoDB conexion
@@ -148,4 +148,6 @@ app.get("/product", async(req, res) =>{
 })
 
 
-app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));
+// app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));
+
+module.exports = app.listen(8080);
