@@ -148,4 +148,6 @@ app.get("/product", async(req, res) =>{
 })
 
 
-app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));
+// app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));
+
+module.exports = app.listen(8080);
