@@ -1,5 +1,4 @@
 import React from "react";
-import {GiSonicShoes} from 'react-icons/gi'
 const FilterProducts = ({category,onClick}) => {
   return (
     <div onClick={onClick}>

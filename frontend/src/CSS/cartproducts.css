@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+.cartMain {
+  background-color: #e7f1ec;
+  display: flex;
+  
+}
+.cartProducts {
+  background-color: white;
+  margin: 1.5rem 0 1.5rem 4rem;
+  width: 550px;
+  box-shadow: 0px 14px 16px 0px rgba(0, 0, 0, 0.13);
+}
+
+.cartProductsImg {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 2rem;
+  height: 150px;
+  width: 150px;
+}
+
+.cartImage {
+  min-width: 70%;
+  height: 100%;
+}
+
+.cartAddBtn {
+  border-radius: 0.3rem;
+  border: none;
+  margin: 0.5rem 0 1rem 2rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #45de89;
+  min-height: 20%;
+  min-width: 10%;
+  cursor: pointer;
+  color: black;
+  font: normal bold 1.3rem Poppins;
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+.cartAddBtn:hover {
+  transform: scale(1);
+}
+
+.cartRemBtn {
+  border-radius: 0.3rem;
+  border: none;
+  margin: 0.5rem 0 1rem 2rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #45de89;
+  min-height: 20%;
+  min-width: 10%;
+  cursor: pointer;
+  color: black;
+  font: normal bold 1.3rem Poppins;
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+.cartRemBtn:hover {
+  transform: scale(1);
+}
+
+.cartInfoDiv {
+  display: flex;
+}
+
+.divTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.deleteIcon {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.cartInfoTitle {
+  font: normal bold 2rem Poppins;
+  margin: 0.5rem 0 0 2rem;
+}
+
+.cartPrice {
+  font: normal bold 1.3rem Poppins;
+  margin: 1rem 0 0 2rem;
+}
+
+.cartCategory {
+  font: normal bold 1.4rem Poppins;
+  margin: 0.5rem 0 0 2rem;
+}
+.quantity {
+  font: normal bold 1.5rem Poppins;
+  margin: 0 0 0 2rem;
+  color: #555;
+}
+
+.totalTitle {
+  font: normal bold 1.5rem Poppins;
+  margin: 0.5rem 0 0.2rem 2rem;
+}
+
+.total {
+  font: normal bold 1.4rem Poppins;
+  margin: 0.5rem 0 2rem 2rem;
+}
+
+.cartInfoCointeiner {
+  margin-left: 2rem;
+  width: 100%;
+}
+.cartBtns {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.cartAndSummary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary {
+  background-color: white;
+  margin: 1.5rem 4rem 1.5rem auto;
+  width: 30%;
+  height: 280px;
+  box-shadow: 0px 14px 16px 0px rgba(0, 0, 0, 0.13);
+  
+}
+
+.summaryTitle{background-color: #ce252d; color:white; text-align: center;padding: 1.2rem 0;}
+
+.summaryTitle h2 {font: normal normal 1.8rem Poppins}
+
+.totalInfo{padding:1rem 0 0rem 1rem;}
+
+.totalInfoTitle{font:normal bold 1.8rem Poppins; margin: 1rem 0 ;}
+
+.totalInfoIP{font :normal normal 1.4rem Poppins; margin-left: 2rem;}
+
+.paymentDiv{margin:1rem; text-align: center ;} 
+
+.paymentBtn{
+  border-radius: 0.3rem;
+  border: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #45de89;
+  width: 100%;
+  cursor: pointer;
+  color: black;
+  font: normal bold 1.2rem Poppins;
+  transform: scale(0.9);
+  transition: 0.2s;}
+
+  .paymentBtn:hover{transform: scale(1);}
+
+  .noproductCartDiv{display: flex;  align-items: center; color: #ce252d;}
+
+  .emptyTitle{font:normal bold 4rem Poppins; margin: 0 20rem ;}
+  
+  .noProductCartImg{ width: 40%;}

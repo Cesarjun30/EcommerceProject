@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+.offers {
+  padding: 10px;
+  background-color:#e7f1ec;
+  display: flex;
+  justify-content: center;
+}
+.offersImgDiv {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 50%;
+  overflow: hidden;
+  padding: .5rem;
+  flex-direction:row;
+}
+
+.offersImg {
+  transform: scale(0.8);
+  transition: 0.2s;
+  max-width: 50%;
+  height: 80%;
+  cursor: pointer;
+}
+
+.offersImg:hover {
+  transform: scale(1);
+}
+
+.offersAddBtn {
+  border-radius: .3rem;
+  border: none;
+  margin-top: .5rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #45de89;
+  min-height: 20%;
+  min-width: 40%;
+  cursor: pointer;
+  color: black;
+  font: normal bold 1.3rem Poppins;
+  transform: scale(0.9);
+  transition: .2s;
+}
+
+.offersAddBtn:hover{transform: scale(1);}
+
+
+.offersBuyBtn {
+    border-radius: .3rem;
+    border: none;
+    margin-top: .5rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #45de89;
+    min-height: 20%;
+    min-width: 20%;
+    cursor: pointer;
+    color: black;
+    font: normal bold 1.3rem Poppins;
+    transform: scale(0.9);
+    transition: .2s;
+  }
+  
+  .offersBuyBtn:hover{transform: scale(1);}
+
+.productInfoDiv {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #d9dfdc;
+}
+
+.offersTitle {
+  text-align: center;
+  font: normal bold 3rem Poppins;
+  margin: .2rem 0 0 0;
+}
+
+.offersDescription {
+  font: normal bold 1.2rem Poppins;
+  margin-top: .5rem;
+}
+
+
+.offersPrice{
+    margin-top: .5rem;
+    font: normal bold 1.3rem Poppins;
+}

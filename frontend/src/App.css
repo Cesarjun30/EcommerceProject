@@ -16,7 +16,7 @@ html {
 }
 
 /*Margenes para los layouts de cada pagina  */
-.general,
+/*.general,
 .kids,
 .men,
 .sneakers,
@@ -26,7 +26,7 @@ html {
 .loginPage,
 .newProduct {
   margin-top: 7.7rem;
-}
+}*/
 
 .signup {
   width: 100%;
@@ -35,15 +35,16 @@ html {
   background: seashell;
 }
 
-.app {
+/*.app {
   position: relative;
-}
-.sticky {
+}*/
+
+/*.sticky {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 50;
-}
+}*/
 
 .top {
   background: #555;
@@ -137,6 +138,7 @@ nav.menu .links:hover {
   padding: 0.5rem 5rem;
   font-size: 1.2rem;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 50;
 }
 
 .loginMenu .newProductLink,
@@ -161,7 +163,7 @@ span.logOut {
 
 .hero h1 {
   font-size: 5rem;
-  margin: 4rem 0 1rem 12rem;
+  margin: 4rem 0 1rem 20rem;
 }
 span.titulo-dest {
   color: rgb(206, 37, 45);
@@ -169,7 +171,8 @@ span.titulo-dest {
 
 .hero p {
   font-size: 2rem;
-  margin-left: 12rem;
+  margin-left: 20rem;
+  margin-top: 2rem;
 }
 
 .hero button {
@@ -178,7 +181,7 @@ span.titulo-dest {
   background: #555;
   padding: 1rem 3rem;
   cursor: pointer;
-  margin: 8rem 0 12rem 12rem;
+  margin: 8rem 0 12rem 20rem;
   border-radius: 1.2rem;
   font-size: 1.8rem;
 }
@@ -190,21 +193,21 @@ span.titulo-dest {
 }
 
 header {
+  /*margin-top: 7.7rem;*/
   width: 100%;
   display: flex;
   flex-direction: column;
-
   background: url(./images/Prod1.png), #f3ddd3;
   background-size: 850px auto;
   background-repeat: no-repeat;
-  background-position: 120% 250%;
-  clip-path: polygon(15vh 0, 100% 0, 100% 80vh, 0 100%);
+  background-position: 120% -200%;
+  clip-path: polygon(30vh 0, 100% 0, 100% 80vh, 0 100%);
 }
 
 .socialbts {
   font-size: 4rem;
-  margin-left: 12rem;
-  margin-bottom: 10rem;
+  margin-left: 20rem;
+  margin-bottom: 5rem;
 }
 
 .socialbts .i {
@@ -224,16 +227,13 @@ header {
 main.general {
   display: flex;
   width: 100%;
-  gap:2rem;
 }
 
 /*Estilos del lado  izquierdo del main */
 
 .Lmainconteiner {
   display: flex;
-  
   justify-content: center;
-  margin-top: 0;
 }
 
 .leftside-content {
@@ -242,11 +242,10 @@ main.general {
   width: 180px;
   border-radius: 6px;
   height: auto;
-  margin-top: 103rem;
+  margin-top: 10rem;
   background-color: #f3ddd3;
   margin-left: 4rem;
 }
-
 
 .leftside-content div.left-title {
   border-radius: 6px 6px 0 0;
@@ -254,28 +253,30 @@ main.general {
   background-color: #555;
   width: 100%;
   text-align: center;
-  color: white;
-  font: normal normal 1rem Poppins;
+  color: #f3ddd3;
+  font: normal normal 1.3rem Poppins;
 }
 
 .left-side-menu {
   width: 100%;
-  
 }
 
 .left-side-menu .leftLinks {
   display: block;
   text-decoration: none;
   text-align: center;
-  font: normal bold 1.5rem Poppins;
-  padding: 1rem 0;
+  font: normal bold 1.6rem Poppins;
+  padding: 2rem 0;
   color: #555;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.15s;
 }
 
 .left-side-menu .leftLinks:hover {
   background-color: #ce252d;
   color: white;
+  font: normal bold 2.5rem Poppins;
 }
 
 /*estilos del lado derecho*/
@@ -283,7 +284,6 @@ main.general {
 .Rmainconteiner {
   display: flex;
   flex-direction: column;
-  flex-grow: 3;
 }
 
 /*Aqui termina la cabecera  lado derecho */
@@ -298,7 +298,10 @@ main.general {
   min-height: 150px;
   padding: 5px;
   background-color: #e7f1ec;
-  
+}
+
+.productsCard:hover {
+  box-shadow: 0px 2px 16px 0px rgba(69, 222, 137, 0.7);
 }
 
 .newMerchandise {
@@ -307,54 +310,92 @@ main.general {
   display: flex;
   gap: 8rem;
   margin: 3rem 0;
-  
-  
-  
+  align-items: center;
 }
 .sigleCard {
   padding: 1rem;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.17);
   background-color: white;
 }
+
 .cardTitle {
   text-align: center;
-  font :normal bold 1.5rem Poppins;
-  margin: 10px  0 0 0  ;
+  font: normal bold 1.5rem Poppins;
+  margin: 10px 0 0 0;
 }
 
 .cardPrice {
   text-align: center;
-  font :normal bold 1.3rem Poppins;
-}
-.productTitle {
-  color: #555;
-  font-size: 3rem;
-  margin: 2rem 0 0rem 7.5rem;
-  
+  font: normal bold 1.3rem Poppins;
 }
 
-.cardDescription {font :normal bold 1.2rem Poppins; text-align: center;}
+.addBtn {
+  border-radius: 0.3rem;
+  border: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #45de89;
+  width: 100%;
+  cursor: pointer;
+  color: black;
+  font: normal bold 1.2rem Poppins;
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+.addBtn:hover {
+  transform: scale(1);
+}
+
+.productTitle {
+  color: #555;
+  font-size: 2.3rem;
+  margin: 2rem 0 0rem 7.5rem;
+}
+
+.productTitle span {
+  border-bottom: solid 5px #ce252d;
+  padding-bottom: 0.4rem;
+}
+
+.cardDescription {
+  font: normal bold 1.2rem Poppins;
+  text-align: center;
+}
 
 .merchandiseImage {
   height: 100%;
   width: 100%;
 }
 
-.loadingData{ margin:30% 0; text-align: center; font:normal normal  1.6rem Poppins;}
+.loadingData {
+  margin: 30% 0;
+  text-align: center;
+  font: normal normal 1.6rem Poppins;
+}
 /**/
+span.dollarSign {
+  font: normal bold 1.3rem Poppins;
+  color: #ce252d; padding-right: .1rem;
+}
 
 .productos {
   padding-top: 5rem;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
-  
 }
 
 .productos .productTitle {
   color: #555;
-  font-size: 3rem;
+  font-size: 2.3rem;
   margin: 2rem 0 0rem 7.5rem;
+}
+
+.productos .productTitle span {
+  border-bottom: solid 5px #ce252d;
+  padding-bottom: 0.4rem;
 }
 
 .productos .product-row1 {
@@ -411,13 +452,14 @@ footer ul li {
 footer ul li a {
   text-decoration: none;
   color: white;
+  font-size: 1.3rem;
 }
 footer h6 {
   font-size: 2.5rem;
   margin: 5rem 0;
 }
 footer .row-footer {
-  font: normal bold 1.5rem Poppins;
+  font: normal normal 1.5rem Poppins;
 }
 
 footer ul li a:hover {

@@ -1,7 +1,10 @@
 import "./App.css";
 import "./CSS/signup.css";
 import "./CSS/newproduct.css"
+import "./CSS/cart.css"
+import "./CSS/cartproducts.css"
 import "./normalize.css";
+import "./CSS/offers.css"
 import Header from "./component/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "./component/Footer";
@@ -9,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import { setDataProduct } from "./redux/productSlice";
 import { useDispatch, useSelector } from "react-redux";
+
 
 function App() {
   const dispatch = useDispatch()
@@ -23,7 +27,7 @@ dispatch(setDataProduct(resData))
  })()
 
   }, [])
-  console.log(productData)
+  //console.log(productData)
   return (
     <> 
        
