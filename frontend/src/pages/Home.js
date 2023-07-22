@@ -36,14 +36,14 @@ const Home = () => {
             <div className="hero" id="hero">
               <h1>
                 <span className="titulo-dest">
-                  Lorem ipsum dolor, sit amet consectetur
+                  We sell good styles for everyone 
                 </span>
                 <br />
-                adipisicing elit. Facilis.
+                You won't find better prices .
               </h1>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />
-                Doloribus, nihil.
+              <p>Check our offers, and compare our prices 
+                 <br />
+                Check our products.
               </p>
               <button>Full offers</button>
 

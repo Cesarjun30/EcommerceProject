@@ -2,7 +2,7 @@
 // expect.extend({toBeOneOf});
 const request = require('supertest');
 const express = require('express');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const app = require('./index'); // Asegúrate de que el archivo se llame app.js y esté en el mismo directorio
 
 describe('Test de la API', () => {
@@ -60,3 +60,6 @@ describe('Test de la API', () => {
     expect(response.body).toBeDefined();
   }, 30000);
 });
+
+
+

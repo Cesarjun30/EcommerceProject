@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
+const jwt = require("jsonwebtoken")
 
 const app = express();
 
@@ -17,9 +18,9 @@ mongoose
   .then(() => console.log("Connect to Data Base"))
   .catch((error) => console.log(error));
 
-  // MongoDB conexion
+// MongoDB conexion
 
-// schema for user 
+// schema for user
 
 const userSchema = mongoose.Schema({
   firstname: String,
@@ -66,13 +67,37 @@ app.post("/signup", (req, res) => {
   findEmail();
 });
 
+
+const TOKEN_KEY = "myWebTokenKey";
+
+const verifyToken = (req, res, next) => {
+
+   const authHeader = req.headers['authorization'];
+   const token = authHeader && authHeader.split('')[1];
+   console.log(authHeader);
+   if(token==null)
+   return res.status(401).send( "se requiere de un token ");
+   jwt.verify(token, TOKEN_KEY, (err, user)=>{
+    if (err) return res.status(403).send("El token es invalido")
+    console.log(user)
+    req.user = user;
+    next();
+   })
+
+
+}
+
+
 app.post("/login", (req, res) => {
+  const { password, email } = req.body;
   console.log(req.body);
-  const { email } = req.body;
 
   async function findSingupEmail() {
     try {
-      const result = await userModel.findOne({ email: email });
+      const result = await userModel.findOne({
+        email: email,
+        password: password,
+      });
 
       if (result) {
         const dataSend = {
@@ -81,16 +106,24 @@ app.post("/login", (req, res) => {
           lastname: result.lastname,
           email: result.email,
           image: result.image,
+          password: password,
         };
-        console.log(dataSend);
+        //console.log(dataSend);
+        const token = jwt.sign(
+          {_id: dataSend._id,email: dataSend.email},
+          TOKEN_KEY,
+          {expiresIn: "2h"}
+          );
 
-        res.send({
+          let nDatos = {...dataSend, token}
+
+        res.status(200).send({
           message: "You logged in successfully",
           alert: true,
-          data: dataSend,
+          data: nDatos,
         });
       } else {
-        res.send({
+        res.status(400).send({
           message: "Email or Password or both are not correct",
           alert: false,
         });
@@ -111,7 +144,7 @@ app.post("/login", (req, res) => {
   })*/
 });
 
-// AQUI TERMINA LA SECCION DE INICIO DE SECCION 
+// AQUI TERMINA LA SECCION DE INICIO DE SECCION
 
 // AQUI EMPIENZA LA SECCION PRODUCTOS
 
@@ -119,8 +152,8 @@ const productSchema = mongoose.Schema({
   name: String,
   category: String,
   image: String,
-  price : String,
-  description: String
+  price: String,
+  description: String,
 });
 
 // model
@@ -129,24 +162,22 @@ const productsModel = mongoose.model("products ", productSchema);
 
 // AQUI GUARDAMOS LOS PRODUCTOS
 
-//API 
+//API
 
-app.post("/uploadProducts", async(req, res) => {
-  console.log(req.body)
-  const data = await productsModel(req.body)
-  const datasave = await data.save()
+app.post("/uploadProducts", verifyToken, async (req, res) => {
+  console.log(req.body);
+  const data = await productsModel(req.body);
+  const datasave = await data.save();
 
-res.send({message : "Product Uploaded 🤩"})
+  res.status(200).send({ message: "Product Uploaded 🤩" });
+});
 
-})
+//
 
-// 
-
-app.get("/product", async(req, res) =>{
-  const data = await productsModel.find({})
-  res.send (JSON.stringify(data))
-})
-
+app.get("/product",  async (req, res) => {
+  const data = await productsModel.find({});
+  res.send(JSON.stringify(data));
+});
 
 // app.listen(PORT, () => console.log("server esta ecuchando en port 8080"));
 

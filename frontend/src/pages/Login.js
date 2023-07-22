@@ -28,7 +28,7 @@ const Login = () => {
     });
   };
 
-  console.log(process.env.REACT_APP_SERVER_DOMIN);
+  //console.log(process.env.REACT_APP_SERVER_DOMIN);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = data;
